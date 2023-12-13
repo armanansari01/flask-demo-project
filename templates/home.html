@@ -12,18 +12,26 @@
       height: 360px;
       width: 100%;
       object-fit: cover;
+      margin-bottom: 16px;
     }
   </style>
 </head>
 <body>
+  {% include 'nav.html' %}
+  <img class="image-fluid" id="banner" src = "https://flask-demo-project.armanansari02.repl.co/static/site-image.jpg">
   <div class="container">
-    <h1 class="text-center mt-3 mb-4">{{company_name}}</h1>
-    <img class="image-fluid" id="banner" src = "https://flask-demo-project.armanansari02.repl.co/static/site-image.jpg">
     <h2 class="text-center mt-2 mb-4">About {{company_name}}</h2>
-    <p class = "lead">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea impedit sed aut distinctio optio odio itaque, ipsum cupiditate ratione doloremque consectetur fugiat dolorum recusandae quae quis blanditiis rem tempora in. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem aut beatae magnam nostrum voluptatibus ex mollitia, veritatis neque fugiat deserunt quam velit adipisci, animi harum. Alias repudiandae placeat maiores? Cum!
-    </p>
-    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+    <div class="row">
+      <div class="col-7" style="margin-bottom:16px">  
+      <p class = "lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea impedit sed aut distinctio optio odio itaque, ipsum cupiditate ratione doloremque consectetur fugiat dolorum recusandae quae quis blanditiis rem tempora in. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem aut beatae magnam nostrum voluptatibus ex mollitia, veritatis neque fugiat deserunt quam velit adipisci, animi harum. Alias repudiandae placeat maiores? Cum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt est accusamus quaerat eum laudantium dignissimos explicabo ipsam. Cumque et repudiandae, numquam similique non aperiam quaerat culpa sint sapiente, blanditiis tenetur.
+      </p>
+        </div>
+      <div class="d-none d-md-block col-md-5">
+      <img src = "/static/people.jpg" style="height: 320px; border-radius: 4px;">
+      </div>
+    </div>
+    <h2 class="text-center mt-2 mb-4">Job Openings</h2>
       <div>
         {% for jobs in jobs%}
           {% include 'jobitem.html' %}
@@ -31,8 +39,8 @@
       </div>
     <div class="text-center">
       <button class="btn btn-secondary">Contact Us</button>
-      <p class="mt-5">Copyright 2023, {{company_name}}</p>
     </div>
   </div>
+  {% include 'footer.html' %}
 </body>
 </html>
